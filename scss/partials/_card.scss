@@ -3,11 +3,12 @@
   border-radius: 10px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
   margin: auto;
+  margin: 40px auto 20px;
   max-width: 350px;
-  width: 350px;
+  width: 300px;
 
   * {
-    font-weight: 100;
+    font-weight: 300;
     outline: none;
   }
 
@@ -52,13 +53,57 @@
     }
   }
 
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .accessories-list {
+    padding: 10px 30px;
+
+    li {
+      color: $gray;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"] + label:before {
+        background-color: $white;
+        border: 2px solid $blue;
+        border-radius: 5px;
+        content: '\00a0';
+        color: $white;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Arial Unicode MS';
+        font-size: 12px;
+        height: 20px;
+        margin-right: 1em;
+        text-align: center;
+        transition: all 0.1 ease-in-out;
+        vertical-align: middle;
+        width: 20px;
+      }
+    }
+
+    input[type="checkbox"]:checked + label:before {
+      background-color: $blue;
+      content: '\2714';
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
   .hero-contact-list {
     border: 2px solid rgba(#555, 0.2);
     border-left: 0;
     border-right: 0;
     color: $gray;
-    list-style: none;
-    margin: 0;
     padding: 20px 30px;
 
     li {
@@ -95,11 +140,11 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     color: $white;
     font-weight: 600;
-    margin: 40px auto 30px;
+    margin: 40px 30px 30px;
     max-width: 300px;
     padding: 20px 0;
     text-decoration: none;
-    transition: all 0.1s ease-in-out;
+    // transition: all 0.1s ease-in-out;
 
     &:before {
       background-image: url("../img/ui_icon_message.png");
@@ -114,19 +159,45 @@
       width: 18px;
     }
 
-    &:hover {
-      box-shadow: 0px 2.5px 15px rgba(0, 0, 0, 0.5);
-      transform: translateY(2.5px);
-    }
-
     &.clicking {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
       transform: translateY(5px);
     }
+
+    // &:active, &:focus {
+    //   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    //   transform: translateY(5px);
+    // }
   }
 
   .report-user {
     color: $gray;
     margin-bottom: 20px;
+  }
+}
+
+@include desktop {
+  .card {
+    width: 350px;
+
+    .accessories-list {
+      li {
+        input[type="checkbox"] + label:before {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .send-message {
+      &:hover {
+        box-shadow: 0px 2.5px 15px rgba(0, 0, 0, 0.5);
+        transform: translateY(2.5px);
+      }
+
+      &.clicking {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        transform: translateY(5px);
+      }
+    }
   }
 }
