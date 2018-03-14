@@ -3,6 +3,7 @@
 window.onload = function () {
   var sendMessage = document.querySelector(".send-message");
   var others = document.querySelector("#outros");
+  var othersInput = document.querySelector("input[name='outros-input']");
 
   sendMessage.addEventListener("click", function (event) {
     event.preventDefault();
@@ -21,6 +22,10 @@ window.onload = function () {
   });
 
   others.addEventListener("change", function () {
-    console.log(this.checked);
+    if (this.checked) {
+      othersInput.focus();
+    } else {
+      othersInput.value = "";
+    }
   });
 };
