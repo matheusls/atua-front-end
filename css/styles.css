@@ -446,6 +446,23 @@ main {
     .card .accessories-list input[type="checkbox"]:checked + label:before {
       background-color: #223794;
       content: '\2714'; }
+    .card .accessories-list input[name="outros-checkbox"] ~ input[name="outros-input"] {
+      display: none;
+      -webkit-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out; }
+    .card .accessories-list input[name="outros-checkbox"]:checked ~ input[name="outros-input"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      border-bottom: 2px solid #223794;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.5);
+      display: block;
+      margin-top: 1em;
+      padding: 0 2px;
+      width: 100%; }
     .card .accessories-list label {
       cursor: pointer; }
   .card .hero-contact-list {
@@ -481,7 +498,9 @@ main {
     font-weight: 600;
     margin: 40px 30px 30px;
     max-width: 300px;
+    overflow: hidden;
     padding: 20px 0;
+    position: relative;
     text-decoration: none; }
     .card .send-message:before {
       background-image: url("../img/ui_icon_message.png");
@@ -500,9 +519,35 @@ main {
       -webkit-transform: translateY(5px);
       -ms-transform: translateY(5px);
       transform: translateY(5px); }
+    .card .send-message:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      -webkit-transform: scale(1, 1) translate(-50%);
+      -ms-transform: scale(1, 1) translate(-50%);
+      transform: scale(1, 1) translate(-50%);
+      -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%; }
+    .card .send-message:focus:not(:active)::after {
+      -webkit-animation: ripple 1s ease-out;
+      animation: ripple 1s ease-out; }
   .card .report-user {
     color: rgba(0, 0, 0, 0.5);
     margin-bottom: 20px; }
+
+@media (min-width: 768px) {
+  .card {
+    width: 350px; }
+    .card .accessories-list li input[type="checkbox"] + label:before {
+      font-size: 18px; } }
 
 @media (min-width: 1024px) {
   .card {
@@ -522,6 +567,61 @@ main {
       -ms-transform: translateY(5px);
       transform: translateY(5px); } }
 
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 1; }
+  20% {
+    -webkit-transform: scale(25, 25);
+    transform: scale(25, 25);
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(40, 40);
+    transform: scale(40, 40); } }
+
+@keyframes ripple {
+  0% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 1; }
+  20% {
+    -webkit-transform: scale(25, 25);
+    transform: scale(25, 25);
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(40, 40);
+    transform: scale(40, 40); } }
+
+.ripple {
+  position: relative;
+  overflow: hidden; }
+  .ripple .ripple-container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    .ripple .ripple-container span {
+      -webkit-animation: ripple 1000ms;
+      animation: ripple 1000ms;
+      background-color: #fff;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      opacity: 0.75;
+      position: absolute;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0); }
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
+
 .social-media {
   margin-top: 0;
   padding: 15px 0; }
@@ -534,6 +634,16 @@ main {
     text-align: center; }
     .social-media .social-media-list li {
       display: inline-block; }
+      .social-media .social-media-list li a {
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1); }
+        .social-media .social-media-list li a:hover {
+          -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          transform: scale(1.2); }
       .social-media .social-media-list li .facebook {
         background-image: url("../img/facebook.svg");
         background-position: center;
