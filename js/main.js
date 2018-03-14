@@ -1,5 +1,12 @@
 "use strict";
 
 window.onload = function () {
-  console.log("DOM ready. Test done");
+  var sendMessage = document.querySelector(".send-message");
+
+  sendMessage.addEventListener("mousedown", function () {
+    this.classList.add("clicking");
+  });
+  sendMessage.addEventListener("mouseup", function () {
+    this.classList.remove("clicking");
+  });
 };
