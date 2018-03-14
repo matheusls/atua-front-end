@@ -1,0 +1,32 @@
+.social-media {
+  margin-top: 0;
+  padding: 15px 0;
+
+  h2 {
+    color: $gray;
+    margin-bottom: .5em;
+  }
+
+  .social-media-list {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      .facebook {
+        @include img_replacement("../img/facebook.svg", 30px, 30px);
+      }
+
+      .twitter {
+        margin: 0 30px;
+        @include img_replacement("../img/twitter.svg", 30px, 30px);
+      }
+
+      .instagram {
+        @include img_replacement("../img/instagram.svg", 30px, 30px);
+      }
+    }
+  }
+}

@@ -338,6 +338,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html, body {
+  font-family: "Arial", sans-serif; }
+
 body {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#223796), to(#707fc2));
   background-image: -webkit-linear-gradient(top left, #223796, #707fc2);
@@ -385,16 +388,16 @@ main {
     line-height: 1;
     margin: 0;
     text-align: center; }
-  .card h1 {
+  .card .hero-name {
     color: #223794;
     font-size: 24px;
     margin-bottom: .5em; }
-  .card h2 {
+  .card .hero-job {
     color: rgba(0, 0, 0, 0.5);
     font-size: 14px;
     margin-bottom: 2.5em;
     text-transform: uppercase; }
-    .card h2 .at {
+    .card .hero-job .at {
       color: #223794; }
   .card .hero-photo {
     border: 6px solid #FFFFFF;
@@ -518,3 +521,44 @@ main {
       -webkit-transform: translateY(5px);
       -ms-transform: translateY(5px);
       transform: translateY(5px); } }
+
+.social-media {
+  margin-top: 0;
+  padding: 15px 0; }
+  .social-media h2 {
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: .5em; }
+  .social-media .social-media-list {
+    margin: auto;
+    padding: 0;
+    text-align: center; }
+    .social-media .social-media-list li {
+      display: inline-block; }
+      .social-media .social-media-list li .facebook {
+        background-image: url("../img/facebook.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        height: 30px;
+        text-indent: -99999px;
+        width: 30px; }
+      .social-media .social-media-list li .twitter {
+        margin: 0 30px;
+        background-image: url("../img/twitter.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        height: 30px;
+        text-indent: -99999px;
+        width: 30px; }
+      .social-media .social-media-list li .instagram {
+        background-image: url("../img/instagram.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        height: 30px;
+        text-indent: -99999px;
+        width: 30px; }

@@ -1,0 +1,10 @@
+@mixin img_replacement ($img, $h, $w) {
+  background-image: url($img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: $h;
+  text-indent: -99999px;
+  width: $w;
+}

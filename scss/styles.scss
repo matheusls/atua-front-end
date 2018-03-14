@@ -1,30 +1,17 @@
   @import "libs/normalize";
 
 @import "modules/variables";
+@import "modules/mixins";
 @import "modules/breakpoints";
 
 html, body {
-  // height: 100%;
-  // width: 100%;
+  font-family: "Arial", sans-serif;
 }
 
 body {
   background-image: linear-gradient(to bottom right, hsla(229, 63%, 36%, 1), hsla(229, 40%, 60%, 1));
   background-repeat: no-repeat;
   background-size: cover;
-  // &:before {
-  //   background-image: linear-gradient(to bottom right, hsla(229, 63%, 36%, 1), hsla(229, 40%, 60%, 1));
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   content: '';
-  //   display: block;
-  //   height: 100%;
-  //   left: 0;
-  //   position: absolute;
-  //   top: 0;
-  //   width: 100%;
-  //   z-index: 0;
-  // }
 }
 
 main {
@@ -43,3 +30,4 @@ main {
 }
 
 @import "partials/card";
+@import "partials/social-media";
