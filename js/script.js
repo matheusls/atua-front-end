@@ -1,4 +1,4 @@
-window.onload = () => {
+window.onload =  function () {
   let sendMessage = document.querySelector(".send-message");
   let others = document.querySelector("#outros");
 

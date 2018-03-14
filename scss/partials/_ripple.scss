@@ -1,0 +1,28 @@
+.ripple {
+  position: relative;
+  overflow: hidden;
+
+  .ripple-container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    span {
+      animation: ripple 1000ms;
+      background-color: #fff;
+      border-radius: 100%;
+      opacity: 0.75;
+      position: absolute;
+      transform: scale(0);
+    }
+  }
+}
+
+@keyframes ripple {
+  to {
+    opacity  : 0;
+    transform: scale(2);
+  }
+}

@@ -94,6 +94,23 @@
       content: '\2714';
     }
 
+    input[name="outros-checkbox"] ~ input[name="outros-input"] {
+      display: none;
+      transition: all 0.1s ease-in-out;
+    }
+
+    input[name="outros-checkbox"]:checked ~ input[name="outros-input"] {
+      appearance: none;
+      border: 0;
+      border-bottom: 2px solid $blue;
+      box-sizing: border-box;
+      color: $gray;
+      display: block;
+      margin-top: 1em;
+      padding: 0 2px;
+      width: 100%;
+    }
+
     label {
       cursor: pointer;
     }
@@ -142,7 +159,9 @@
     font-weight: 600;
     margin: 40px 30px 30px;
     max-width: 300px;
+    overflow: hidden;
     padding: 20px 0;
+    position: relative;
     text-decoration: none;
     // transition: all 0.1s ease-in-out;
 
@@ -164,15 +183,43 @@
       transform: translateY(5px);
     }
 
-    // &:active, &:focus {
-    //   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    //   transform: translateY(5px);
-    // }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, .5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    &:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
   }
 
   .report-user {
     color: $gray;
     margin-bottom: 20px;
+  }
+}
+
+
+@include tablet {
+  .card {
+    width: 350px;
+
+    .accessories-list {
+      li {
+        input[type="checkbox"] + label:before {
+          font-size: 18px;
+        }
+      }
+    }
   }
 }
 
@@ -199,5 +246,20 @@
         transform: translateY(5px);
       }
     }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
   }
 }
