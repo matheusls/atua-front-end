@@ -1,34 +1,10 @@
-  @import "libs/normalize";
+@import "libs/normalize";
 
 @import "modules/variables";
 @import "modules/mixins";
 @import "modules/breakpoints";
 
-html, body {
-  font-family: "Arial", sans-serif;
-}
-
-body {
-  background-image: linear-gradient(to bottom right, hsla(229, 63%, 36%, 1), hsla(229, 40%, 60%, 1));
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100%;
-  justify-content: center;
-  padding: 0 15px;
-  position: relative;
-  z-index: 1;
-}
-
-@include desktop {
-
-}
-
+@import "partials/general";
 @import "partials/card";
 @import "partials/ripple";
 @import "partials/social-media";

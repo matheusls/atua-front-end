@@ -2,27 +2,27 @@
 
 window.onload = function () {
   var sendMessage = document.querySelector(".send-message");
-  var others = document.querySelector("#outros");
+  var otherCheckbox = document.querySelector("#outros");
   var othersInput = document.querySelector("input[name='outros-input']");
 
   sendMessage.addEventListener("click", function (event) {
     event.preventDefault();
   });
-  sendMessage.addEventListener("mousedown", function () {
-    this.classList.add("clicking");
+  sendMessage.addEventListener("mousedown", function (event) {
+    event.target.classList.add("clicking");
   });
-  sendMessage.addEventListener("mouseup", function () {
-    this.classList.remove("clicking");
+  sendMessage.addEventListener("mouseup", function (event) {
+    event.target.classList.remove("clicking");
   });
   sendMessage.addEventListener("touchstart", function (event) {
-    this.classList.add("clicking");
+    event.target.classList.add("clicking");
   });
-  sendMessage.addEventListener("touchend", function () {
-    this.classList.remove("clicking");
+  sendMessage.addEventListener("touchend", function (event) {
+    event.target.classList.remove("clicking");
   });
 
-  others.addEventListener("change", function () {
-    if (this.checked) {
+  otherCheckbox.addEventListener("change", function (event) {
+    if (event.target.checked) {
       othersInput.focus();
     } else {
       othersInput.value = "";

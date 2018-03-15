@@ -338,21 +338,23 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html {
+  height: 100%; }
+
 html, body {
-  font-family: "Arial", sans-serif; }
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  overflow: auto; }
 
 body {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#223796), to(#707fc2));
   background-image: -webkit-linear-gradient(top left, #223796, #707fc2);
   background-image: linear-gradient(to bottom right, #223796, #707fc2);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 100%; }
 
 main {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -362,7 +364,6 @@ main {
   -webkit-flex-flow: column nowrap;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -371,13 +372,20 @@ main {
   position: relative;
   z-index: 1; }
 
+@media (max-height: 799px) {
+  main {
+    height: auto; } }
+
+@media (min-height: 800px) {
+  main {
+    height: 100%; } }
+
 .card {
   background-color: #FFFFFF;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-  margin: auto;
   margin: 40px auto 20px;
   max-width: 350px;
   width: 300px; }
@@ -443,28 +451,28 @@ main {
         transition: all 0.1 ease-in-out;
         vertical-align: middle;
         width: 20px; }
-    .card .accessories-list input[type="checkbox"]:checked + label:before {
-      background-color: #223794;
-      content: '\2714'; }
-    .card .accessories-list input[name="outros-checkbox"] ~ input[name="outros-input"] {
-      display: none;
-      -webkit-transition: all 0.1s ease-in-out;
-      transition: all 0.1s ease-in-out; }
-    .card .accessories-list input[name="outros-checkbox"]:checked ~ input[name="outros-input"] {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      border: 0;
-      border-bottom: 2px solid #223794;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      color: rgba(0, 0, 0, 0.5);
-      display: block;
-      margin-top: 1em;
-      padding: 0 2px;
-      width: 100%; }
-    .card .accessories-list label {
-      cursor: pointer; }
+      .card .accessories-list li input[type="checkbox"]:checked + label:before {
+        background-color: #223794;
+        content: '\2714'; }
+      .card .accessories-list li input[name="outros-checkbox"] ~ input[name="outros-input"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        border-bottom: 2px solid #223794;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.5);
+        display: none;
+        margin-top: 1em;
+        padding: 0 2px;
+        -webkit-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+        width: 100%; }
+      .card .accessories-list li input[name="outros-checkbox"]:checked ~ input[name="outros-input"] {
+        display: block; }
+      .card .accessories-list li label {
+        cursor: pointer; }
   .card .hero-contact-list {
     border: 2px solid rgba(85, 85, 85, 0.2);
     border-left: 0;
